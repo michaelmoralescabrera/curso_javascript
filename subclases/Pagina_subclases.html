@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subclases</title>
+</head>
+<body>
+
+    <script>
+
+  class Deportitas{
+    constructor(nombre, apellido){
+               this.nombre = nombre;
+               this.apellido = apellido;
+    }
+  }
+
+  //Se genera la subclase
+
+  class Futbolista extends Deportitas{
+    constructor(nombre, apellido, goles){
+        //no se define nombre ni apellido ya que los toma de la clase Deportistas, 
+        // para que los tome se coloca la siguiente linea, solo se define goles que pertenece a esta clase
+        super(nombre,apellido);
+        this.goles = goles;
+    }
+  }
+
+  let deportista1 = new Deportitas('Gustavo', 'Escobar');
+  deportista1.nombre;
+  deportista1.apellido;
+
+  document.writeln(deportista1.nombre+' '+deportista1.apellido + '<br>');
+
+  let futbolista1 = new Futbolista('Roberto', 'Fernandez', 5);
+  futbolista1.nombre;
+  futbolista1.apellido;
+  futbolista1.goles;
+
+  document.writeln(futbolista1.nombre+' '+futbolista1.apellido+' '+futbolista1.goles);
+
+
+
+    </script>
+    
+</body>
+</html>
