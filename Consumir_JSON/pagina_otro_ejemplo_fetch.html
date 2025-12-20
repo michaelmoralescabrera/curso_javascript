@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+<body>
+    
+    <div id="mostrarenpantalla"></div>
+
+<script>
+let datojson;
+
+fetch('persona.json')
+.then(function(respuesta) {
+    return respuesta.json();
+})
+.then(function(salida) {
+    datojson = salida;
+
+    var elementoTexto = document.getElementById('mostrarenpantalla');
+    elementoTexto.textContent = datojson.direccion.calle;
+});
+</script>
+
+</body>
+</html>
+
+<!--
+¿Qué hace este código?
+Este código lee un archivo llamado persona.json y muestra en pantalla la calle que aparece dentro de ese archivo, usando JavaScript.
+
+Explicación paso a paso
+1. HTML:
+<div id="mostrarenpantalla"></div>
+- Crea un espacio en la página donde se va a mostrar el resultado.
+- Tiene un id para que JavaScript lo pueda encontrar.
+2. JavaScript:
+let datojson;
+- Se declara una variable para guardar los datos que vienen del archivo JSON.
+3. fetch('persona.json')
+- Esta línea pide el archivo persona.json al servidor (como si lo descargara).
+- Es una operación asincrónica, por eso se usa .then() para manejar el resultado cuando llegue.
+4. .then(function(respuesta) { return respuesta.json(); })
+- Convierte la respuesta en un objeto JavaScript que se puede usar.
+- El archivo JSON pasa de texto plano a un formato que el código puede entender.
+5. .then(function(salida) { ... })
+- Aquí ya tienes los datos listos.
+- Se guardan en la variable datojson.
+6. document.getElementById('mostrarenpantalla')
+- Busca el <div> que tiene el id mostrarenpantalla.
+7. elementoTexto.textContent = datojson.direccion.calle;
+- Muestra en pantalla el valor de calle que está dentro del objeto direccion del JSON.
+-->

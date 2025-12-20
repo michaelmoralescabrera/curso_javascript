@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaginaConcatenacion</title>
+</head>
+<body>
+    <script>
+let nombre = 'Luis'
+let apellido = 'Gomez'
+let precio = 500;
+
+document.writeln(nombre + ' ' + apellido);
+document.writeln('<br>');
+document.writeln('nombre: '+nombre+ ' ' +apellido);
+document.writeln('<br>');
+let saludo = nombre.concat(apellido);
+document.writeln(saludo);
+document.writeln('<br>');
+document.writeln('El precio es: $' +precio)
+document.writeln('<br>');
+document.writeln('=========================<br>');
+
+document.writeln(nombre, ' ',apellido);
+document.writeln('<br>');
+document.writeln('El precio es: $', precio);
+
+</script>
+</body>
+</html>

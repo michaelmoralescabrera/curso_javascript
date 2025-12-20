@@ -1,0 +1,23 @@
+En VS se ingresa a la terminal y se ingresa a la carpeta donde se trabajar el proyecto, después escibimos npm init -y, se va  acrear en la carpeta un archivo llamado package.json, ahí identificamos el main y verificamos como se llama, ahora creamos el archivo JS con el nombre del main
+
+después instalamos el framework express
+
+escribimos el comando npm install sxpress, se va a crear un archivo llamado package-lock.json y una carpeta llamda node_modules.
+
+Hora instalamos el complemento de MySQL que va establecer la comunicación con la BD, escribimos npm install MySQL
+
+En el archivo index.js se realiza la programación de conexión a la BD y se realizan las consultas a la BD con las instrucciones insert, update, delete y select de lo que queremos que se haga desde la App, como no se ha generado un archivo HTML, se ejecuta desde la terminal dentro de la carpeta donde se encuentra el proyecto, escribimos node index.js
+
+
+
+Si al ejecutar desde terminal aparece el siguiente error
+
+Client does not support authentication protocol requested by server; consider upgrading MySQL client
+
+En MySQL ejecutar la siguiente instrucción en un query nuevo:
+
+
+primero ejecutar:
+    ALTER USER 'your_user'@'localhost' IDENTIFIED WITH mysql_native_password BY 'your_password';
+después ejecutar:
+    FLUSH PRIVILEGES;

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JSON</title>
+</head>
+<body>
+    <div id="muestrapantalla"></div>
+    <Script>
+let datoJson;
+let xhr = new XMLHttpRequest();//Sirve para solicitar a un archivo JSON que nos de su informacion
+//Se coloca true para que la solicitud sea asincrona, esto quiere decir que se ejecutara en segundo plano 
+//miestra la pagina realiza otras tareas y la pagina no se pausa mientras espera las respuestas, si se colocar false seria sincrona
+//podria ocacionar que el codigo se detenga mientrans espera la respuesta
+//open poque se abrira una solicitud, get porque se solicita informacion, despues viene el nombre del archivo Json que se va a consumir,
+// en este caso, como esta en la misma ruta solo se pone el nombre del archivo
+xhr.open('GET', 'persona.json', true);
+//con responseType estamos indicando el tipo de respuesta, en este caso estamos esperando un JSON
+//Con esto JS va aintentar adaptar o parcear la respuesta que reciba en un archivo JSON
+xhr.responseType = 'json';
+//onload se desencadena cuando XMLHttpRequest se completo exitosamente, se utiliza para decirle a JS que se ha recibido una respuesta exitosamente
+//  desde el servidor y que los dtaos esta disponibles para ser procesados 
+xhr.onload = function(){
+    if(xhr.status === 200){//200 significa que la solicitud se a completado exitosamente, se coloca === para saber si es identico (si es exactamente 200)
+      //datosJson que sea igual a lo que tenga en el xhr, la respues en si misma y que se almacene en la variable
+        datoJson = xhr.response;
+        //nombre es el div de arriba que es donde vamos a mostrar el resultado y se le pasa a la variable elementoTexto
+        let elementoTexto = document.getElementById('muestrapantalla');
+        //se extrae el contendio del archivo json y s le pasa a la variable elementoTexto para que lo muestre en pantalla
+        //en este caso se estra extrayendo del json solo el nombre
+        elementoTexto.textContent = datoJson.nombre;
+    }else{
+        //manejar el error
+    }
+}
+//Se llama al elemento xhr con el send es para enviar 
+xhr.send();
+    </Script>
+</body>
+</html>
+
+
+
+
+
+<!--
+
+//Paso a paso explicacion del codigo de arriba
+Elemento HTML donde se mostrará el resultado:
+<div id="muestrapantalla"></div>
+- Este <div> es como una caja vacía en la página donde se mostrará el nombre.
+- Se crea una variable para guardar los datos del JSON:
+let datoJson;
+- Se crea un objeto para hacer la petición al archivo JSON:
+let xhr = new XMLHttpRequest();
+- Se configura la petición:
+xhr.open('GET', 'persona.json', true);
+- 'GET': tipo de petición (solo leer).
+- 'persona.json': archivo que se quiere leer.
+- true: se hace de forma asíncrona (no bloquea la página).
+- Se indica que la respuesta será un objeto JSON:
+xhr.responseType = 'json';
+- Cuando la petición se completa:
+xhr.onload = function(){
+    if(xhr.status === 200){
+        datoJson = xhr.response;
+        let elementoTexto = document.getElementById('muestrapantalla');
+        elementoTexto.textContent = datoJson.nombre;
+    }
+}
+- Si la respuesta fue exitosa (status === 200):
+- Se guarda el contenido del JSON en datoJson.
+- Se busca el <div> con id="muestrapantalla".
+- Se muestra el valor de datoJson.nombre dentro del <div>.
+- Se envía la petición:
+xhr.send();
+
+-->

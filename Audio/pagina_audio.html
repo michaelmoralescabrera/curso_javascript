@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador y audio</title>
+</head>
+<body>
+    <!--SetTimeOut-->
+<!--En la siguiente linea se crea un text pero al colocar number solo permite ingresar numeros-->
+    <input type="number" id="tiempo">
+    <!--Se crea un boton de otra forma a la ya trabajada-->
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <!--Se agrega la palabra APAGADo en color rojo que despues cambiara a encendido-->
+    <h1 id="textoalarma" style="color: red";>APAGADO</h1>
+
+    <!--en la etiqueta audio se utiliza para agregar audio a la pagina web-->
+    <!--Si se coloca controls en lugar del id mostrara en pantalla un reproductor de audio-->
+    <!--<audio controls>-->
+     <audio   id="audioalarma">
+ <!--Se agrega el archivo mp3 que se encuentra en nuestra carpeta donde esta el proyecto
+ en type se coloca el tipo de archivo  se utiliza-->
+<source src="alarma.mp3" type="audio/mpeg">
+Sonido no habilitado
+    </audio>
+    
+    <script src="audio_temporizador.js"></script>
+</body>
+</html>

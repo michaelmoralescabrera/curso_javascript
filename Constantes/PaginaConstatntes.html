@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PaginasConstantes</title>
+</head>
+<body>
+    <script>
+        //La variable puede cambiar su valor si es que se necesita
+let precio = 200;
+document.writeln('precio: ', precio);
+document.writeln('<br>');
+precio = 300;
+document.writeln('precio: ', precio);
+document.writeln('<br>');
+
+// con la instruccion const, la variable no puede cambiar su valor
+const precio2 = 200;
+document.writeln('precio: ', precio2);
+document.writeln('<br>');
+/*precio = 300; // Esto causará un error porque 'precio' es una constante
+document.writeln('precio: ', precio);*/
+    </script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+
+Buscar la definición y ejemplos en copilot de promesas en JS
+
+Se utilizan:
+
+Get- obtener información de un servidor
+post - enviar información al servidor
+put - se utilza para actualizar un recurso en el servidor
+delete - eliminar un recurso que se encuentre en un servidor
+
+códigos 
+
+200 - respuesta completa
+201 - elemento creado
+204 - respuesta vacia
+400 - mal solicitado
+401 - no autorizado
+
+
