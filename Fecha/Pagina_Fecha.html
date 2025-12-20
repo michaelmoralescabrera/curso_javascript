@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="estilos.css">
+</head>
+<body onload="comenzarReloj()"><!--Se coloca onload para que al abrir la pagina se dispare la funcion programada para el reloj-->
+
+        <!--SetTimeOut-->
+<!--En la siguiente linea se crea un text pero al colocar number solo permite ingresar numeros-->
+    <input type="number" id="tiempo">
+    <!--Se crea un boton de otra forma a la ya trabajada-->
+    <button onclick="comenzarTiempo()">Alarma</button>
+    <!--Se agrega 00:00:00 para el reloj-->
+    <h1 id="textoalarma">00:00:00</h1>
+
+    <!--en la etiqueta audio se utiliza para agregar audio a la pagina web-->
+    <!--Si se coloca controls en lugar del id mostrara en pantalla un reproductor de audio-->
+    <!--<audio controls>-->
+     <audio   id="audioalarma">
+ <!--Se agrega el archivo mp3 que se encuentra en nuestra carpeta donde esta el proyecto
+ en type se coloca el tipo de archivo  se utiliza-->
+<source src="alarma.mp3" type="audio/mpeg">
+Sonido no habilitado
+    </audio>
+    
+    <script src="Fecha.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagina_formularios_botones</title>
+</head>
+<body>
+<h4>Botón de incrementar</h4><br>
+<form>
+    <!--Se genera el boton, onclick Va a realizar la accion de la funcion que se genero en JS, se coloca el nombre de la funcion-->
+    <input type="button" value="incrementar" onclick="incrementar()"> 
+</form>
+
+<script>
+let contador = 0;
+function incrementar(){
+contador++;
+alert('valor: ' + contador);
+}
+</script>
+
+
+    
+    
+</body>
+</html>
