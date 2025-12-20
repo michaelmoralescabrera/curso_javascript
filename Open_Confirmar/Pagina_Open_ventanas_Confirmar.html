@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open_ventanas_Confirmar</title>
+</head>
+<body>
+    <h5>Funciones Open y confirmar</h5>
+    <form>
+Abrir en otra pestaña
+<input type="button" value="Abrir" onclick="abrir()"><br><br>
+Abrir otra ventana
+<input type="button" value="Abrir" onclick="ventana()"><br><br>
+<input type="button" value="Salir" onclick="confirmar()"><br><br>
+</form>
+<script>
+    //con esta funcion se abre otra pestaña en el navegador web
+function abrir(){
+let ventana = open();//open es una funcion interna de javascript
+ventana.document.writeln('Soy otra pagina web');
+}
+
+function ventana(){
+//abrea otra ventana, las comillas vacias hacen que se abra una nueva ventana, que se desancle una pestaña
+//si se quitan las comillas solo se abrira una nueva pestaña
+let ventana = open('','', 'width=400, height = 250' );
+ventana.document.writeln('Soy otra ventana de pagina web')
+}
+function confirmar(){
+    let respuesta = confirm('Desea salir de la pagina?');//confirm es una funcion interna de javascript, u hace que se habra una ventana de confirmación
+    if(respuesta == true){
+        window.close();
+    }
+}
+
+
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,19 @@
+//JSON: JavaScript Object Notation o Notacion de Objetos en JavaScript
+//Se utiliza para transmitir datos entre un servidor y una pagina web
+//Es una formato de intercambio de datos estandarizado 
+//Jason puede ser utilizado de forma independiente de JS
+
+Siempre se deben usar llaves y doble comillas
+
+Ejemplo:
+
+{
+"nombre": "Luis Morales",   ---valor de tipo array
+"edad": 40,   ----valor de tipo entero
+"estudiante": false,  ----valor de tipo boleano
+"direccion":{    ----Este es un objeto con dos valores de tipo string
+    "calle": "Ave. Primera No. 555",
+    "ciudad": "Mexico"
+},
+"telefono": ["5523219842", "98654123"] ---este objeto de tipo array con dos valores numericos
+}

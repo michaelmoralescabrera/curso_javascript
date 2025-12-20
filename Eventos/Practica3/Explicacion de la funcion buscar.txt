@@ -1,0 +1,76 @@
+¿Qué hace esta función buscar()?
+La función se activa (probablemente al hacer clic en un botón) y realiza lo siguiente:
+
+Paso a paso explicado
+
+1. Limpiar la lista
+lista.innerHTML = '';
+
+- Borra todo el contenido HTML dentro del elemento lista (probablemente un <ul> o <ol>).
+- Esto evita que los resultados anteriores se acumulen cada vez que haces una búsqueda.
+
+2. Obtener datos desde un archivo
+fetch(archivo)
+  .then(respuesta => respuesta.json())
+
+
+- fetch(archivo) carga un archivo (como un .json) desde el servidor.
+- .then(respuesta => respuesta.json()) convierte la respuesta en un objeto JavaScript.
+
+3. Recorrer los datos
+for(let item of salida.data){
+
+
+- salida.data es un arreglo de objetos. Cada item tiene propiedades como nombre y sinopsis.
+
+4. Filtrar por coincidencia
+if(item.nombre.startsWith(input.value.toUpperCase())){
+
+
+- Compara si el nombre del item empieza con el texto que el usuario escribió en el campo input, convertido a mayúsculas.
+
+5. Crear elementos HTML
+let p = document.createElement('p');
+p.id = item.nombre;
+p.innerHTML = item.sinopsis;
+p.style.display = 'none';
+
+
+- Crea un párrafo oculto que contiene la sinopsis del item.
+- Se oculta inicialmente (display: 'none') para mostrarlo solo cuando el usuario pase el mouse.
+let li = document.createElement('li');
+li.innerHTML = item.nombre;
+- Crea un elemento de lista con el nombre del item.
+
+6. Interacción con el mouse
+li.addEventListener('mouseover', function(){
+  let p = document.getElementById(item.nombre);
+  p.style.display = 'block';
+});
+
+
+- Cuando el mouse pasa sobre el nombre, se muestra la sinopsis.
+li.addEventListener('mouseout', function(){
+  let p = document.getElementById(item.nombre);
+  p.style.display = 'none';
+});
+
+
+- Cuando el mouse se va, la sinopsis se oculta de nuevo.
+
+7. Agregar al DOM
+li.appendChild(p);
+lista.appendChild(li);
+
+
+- El párrafo se agrega dentro del li, y luego el li se agrega a la lista principal.
+
+8. Manejo de errores
+.catch(function(error){
+  console.log(error);
+});
+
+
+- Si ocurre algún error al cargar o procesar el archivo, se muestra en la consola.
+
+

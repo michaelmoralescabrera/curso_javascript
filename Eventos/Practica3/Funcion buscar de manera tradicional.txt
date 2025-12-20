@@ -1,0 +1,40 @@
+function buscar() {
+    /* ¿Qué es innerHTML?
+    Es una forma de leer o cambiar el contenido HTML que está dentro de un elemento en una página web.
+    */
+    lista.innerHTML = ''; // Esto limpia la lista cada vez que se da click en el botón buscar
+
+    fetch(archivo)
+    .then(function(respuesta) {
+        return respuesta.json();
+    })
+    .then(function(salida) {
+        for (let item of salida.data) {
+            if (item.nombre.startsWith(input.value.toUpperCase())) {
+                let p = document.createElement('p');
+                p.id = item.nombre;
+                p.innerHTML = item.sinopsis;
+                p.style.display = 'none';
+
+                let li = document.createElement('li');
+                li.innerHTML = item.nombre;
+
+                li.addEventListener('mouseover', function() {
+                    let p = document.getElementById(item.nombre);
+                    p.style.display = 'block';
+                });
+
+                li.addEventListener('mouseout', function() {
+                    let p = document.getElementById(item.nombre);
+                    p.style.display = 'none';
+                });
+
+                li.appendChild(p);
+                lista.appendChild(li);
+            }
+        }
+    })
+    .catch(function(error) {
+        console.log(error);
+    });
+}

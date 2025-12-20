@@ -1,0 +1,3 @@
+Crear una BD
+como crear una clase repositoria que le a la BD
+como consultar la clase repositoria desde javaScript

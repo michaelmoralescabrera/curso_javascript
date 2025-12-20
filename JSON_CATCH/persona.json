@@ -1,0 +1,10 @@
+{
+"nombre": "Luis Morales",
+"edad": 40,
+"estudiante": false,
+"direccion":{
+    "calle": "Ave. Primera No. 555",
+    "ciudad": "Mexico"
+},
+"telefono": ["5523219842", "98654123"]
+}

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch</title>
+</head>
+<body>
+    <div id="mostrarenpantalla"></div>
+
+<script>
+//catch se utiliza para atrapar errores en nestros porgramas, es un metodo que se utiliza en promesas 
+
+//en este ejercicio se simula un error en la linea 19
+let datojson;
+
+fetch('persona.json')
+.then(function(respuesta) {
+    return respuesta.jon();//para este ejercicio, se escribe mal json colocando dolo jon para que 
+    // el catch atrape el error, pero el catch puede atrapar el error en cualquier linea donde se detecte un error
+})
+.then(function(salida) {
+    datojson = salida;
+
+    var elementoTexto = document.getElementById('mostrarenpantalla');
+    elementoTexto.textContent = datojson.direccion.calle;
+})
+.catch(function(error) {alert(error)});
+</script>
+</body>
+</html>

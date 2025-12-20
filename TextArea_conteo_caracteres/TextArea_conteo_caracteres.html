@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conteo de caracteres</title>
+</head>
+<body>
+    <p>
+        <!--Maxlength es el total de caracteres que se podran agregar al textarea-->
+        <textarea id="texto" rows="10" cols="35" maxlength="140"></textarea>
+    </p>
+    <p> Caracteres disponibles:
+        <!--Span es un elemento que se utiliza para aplicar estilos y modificar el formato o agrupar contenido en linea sin 
+        afectar la estructura del documento que se esta creando-->
+        <span id="cantidad">20</span>
+    </p>
+<script>
+    //addEventListener Se utiliza para adjuntar un escuchador que va a estar enlazado aun elemento html en especifico
+    //permite que una funcion se ejecute cuando haya un evento en particula en el elemento objetivo, por ejemplo (un clic del mouse, una tecla en especifico.etc)
+   //con keyup estamos escuchado las teclas de nuestro teclado, con addEvenListener Keyup va a capturas las pulsaciones de nuestra teclas, 
+   //si fueran los clic del mouse se utilizaria mouseover, pero como se necesita saber cuando se esta teclenado se utiliza keyup
+    document.getElementById('texto').addEventListener('keyup', caracteres);
+
+    function caracteres(){
+        let cant = document.getElementById('texto').value.length;//Le pasa el numero de caracteres que se agregan al textarea a la variable cant
+        //el numero de caracteres de la variable cant se pasan a enteros y se van restando a los 20 totales disponibles y se los pasan a la variable disponibles
+        let disponibles = 20 - parseInt(cant);
+        //innerHTML es uan propiedad de JS que permite acceder al contenido interno de un elemento en formato de cadena de textos,
+        //permite tanto obtener como establecer contendio en html
+        //lo que se esta diciendo en la siguiente linea es que buscamos  del elemento id cantidad sacamos lo que tiene ahi y se lo pasamos a la variable disponibles
+        //En la siguinte linea innerHTML Verifica cuanto queda disponible del id cantidad despues de la resta lo toma  y se lo pasa a la variable disponible
+        document.getElementById('cantidad').innerHTML = disponibles;
+        if(disponibles == 0){
+            alert('Cantidad de caracteres agotados');
+        }
+
+    }
+
+</script>
+
+</body>
+</html>

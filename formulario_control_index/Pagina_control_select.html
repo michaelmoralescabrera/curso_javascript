@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Control Select</Select></h1>
+<h4>Colores de semaforo</h4>
+<for>
+    <p>
+        <!--Se crea el control select-->
+       <select id="select1" onchange="cambiarcolor()">
+<option value="Puede Continuar">Verde</option>
+<option value="Precaucion para detenerse">Amarillo</option>
+<option value="Debe detenerse">Rojo</option>
+       </select>
+    </p>
+   <!--Se crean los text--> 
+<p>Indice Seleccionado:<input type="text" id="text1" size="1"></p>
+<p>Color seleccionado<input type="text" id="text2" size="5"></p>
+<p>Indicación<input type="text" id="text3"></p>
+
+<script>
+        function cambiarcolor(){
+            //Lo que selecciona el usuario del control select se lo pasa a la variable seleccion
+            let seleccion = document.getElementById('select1');
+//con selectedIndex toma el indice de lo que tra e la variable lo cual seria para verde 0, para amarillo 1 y para rojo 2 y se lo pasa al text1
+document.getElementById('text1').value = seleccion.selectedIndex;
+//al colocar text al final toma el texto que trae la variable seleccionar en este caso es verde, amarillo o rojo y se lo pasa a text2
+document.getElementById('text2').value = seleccion.options[seleccion.selectedIndex].text;
+//al colocar value al final, toma el value dependendo del color que se eligio en el control select1 
+//las opciones que toma son "Puede continuar, "precaucion..." o "debe detenerse"  y se lo pasa a text3
+document.getElementById('text3').value = seleccion.options[seleccion.selectedIndex].value;            
+        }
+
+
+
+</script>
+
+</for>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+</body>
+</html>

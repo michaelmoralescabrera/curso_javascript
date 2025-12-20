@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OperadoresMatematicos</title>
+</head>
+<body>
+    <script>
+let a, b, sum, res, mul, div, residuo, potencia;
+//pedir datos al usuario, se coloca parseInt 
+// ya que al usar el + concatena y no suma
+a = parseInt (prompt('Ingresa valor 1...'));
+b = parseInt (prompt('Ingresa valor 2...'));
+
+//suma
+
+sum= a + b;
+document.write('La suma es: ' + sum + '<br>');
+//resta
+res = a - b;
+document.write('La resta es: ' + res + '<br>');2
+// multiplicacion
+mul = a * b;
+document.write('La multiplicación es: ' + mul + '<br>');
+
+//division
+div = a / b;
+document.write('La división es: ' + div + '<br>');
+
+// residuo
+residuo = a % b;
+document.write('El residuo es: ' + residuo + '<br>');
+
+//Potencia
+potencia = a ** b;
+document.write('La potencia es: ' + potencia + '<br>');
+
+    </script>
+</body>
+</html>

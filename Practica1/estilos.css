@@ -1,0 +1,38 @@
+h1{
+    font-family: 'Courier New', Courier, monospace;
+    color: cadetblue;
+    text-shadow: 2px 2px 4px #47af69;/* agrega sombra al texto*/
+    font-size: 40px;
+    text-align: center;
+}
+
+button{
+    background-color: rgb(36, 195, 8);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 20px;/*redondea las esquinas entre mas grande el pixel mas redondo se hace*/
+    cursor: pointer;
+
+}
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
+li{
+    background-color: aqua;
+    padding: 8px;
+    border-bottom: 1px solid #830808;
+    text-align: center;
+
+
+}
+

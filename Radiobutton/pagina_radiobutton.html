@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>radiobutton</title>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</head>
+<body>
+
+    <h1>radiobutton</h1><br>
+    <h4>Seleccione disponibilidad de horario</h4>
+    <form>
+        <input type="radio" id="radio1" name="horario">mañana<br>
+        <input type="radio" id="radio2" name="horario">tarde<br>
+        <input type="radio" id="radio3" name="horario">noche<br><br>
+        <input type="button" value="Confirmar" onclick="seleccion()">
+    </form>
+        <script>
+function seleccion(){
+    if(document.getElementById('radio1').checked){//checked se usa para indicar que esta seleccionado
+        swal('Horario de 8am a 12m');
+    }
+        if(document.getElementById('radio2').checked){
+        swal('Horario de 2pm a 6pm');
+    }
+        if(document.getElementById('radio3').checked){
+        swal('Horario de 7pm a 11pm');
+    }
+
+
+}
+
+        </script>
+</body>
+</html>

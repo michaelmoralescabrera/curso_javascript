@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onblur</title>
+</head>
+<body>
+    <!--Onblur se utiliza para interactuar con el usuario que trabaja 
+//con nuestro formulario fuera de un boton o una casilla-->
+    <h4>Ingreso de datos</h4>
+    <!--Se genera el text-->
+    Ingrese su nombre
+    <input type="text" id="nombre" onfocus="f_focus()" onblur="f_onblur()">
+
+<script>
+function f_focus(){
+    document.getElementById('nombre').value = ''; //limpia el text
+    //document.getElementById('nombre').style.background = '';//quita el color rojo del text
+    document.getElementById('nombre').style.borderColor = '';//quita el color rojo del borde del text
+}
+function f_onblur(){
+    //no permite que se quede vacio el text cuando el usuario da clic en otro lugar sin antes
+    //completar de ingresar informacion en el text y le manda un mensaje
+    if(document.getElementById('nombre').value == ''){ 
+        //document.getElementById('nombre').style.background = 'red';//cuando el usuario no coloca ningun valor en el text le coloca un color en el fondo del text para indicar cual elemento esta vacio
+        document.getElementById('nombre').style.borderColor = 'red';//cuando el usuario no coloca ningun valor en el text le coloca un color en el borde para indicar cual elemento quedo vacio
+        alert('Debe completar los datos');
+    }
+}
+
+</script>
+
+
+    
+</body>
+</html>

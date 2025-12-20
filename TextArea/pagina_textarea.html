@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text_area</title>
+</head>
+<body>
+    <h5>Comentarios</h5>
+    <form>
+<p>
+    <textarea id="comentarios" rows="20" cols="40"></textarea>
+</p>
+<input type="button" value="Enviar" onclick="comentar()">
+    </form>
+    <script>
+        //Con las siguientes dos lineas se evita que el usuario pueda modificar el tamaño del textarea
+        let area = document.getElementById('comentarios');//Se pasa el ID del textarea a la variable area
+        area.style.resize = "none";//a la vareable area que contien ya el textarea se le indica que no se pueda modificar el tamaño
+function comentar(){
+    if(document.getElementById('comentarios').value.length > 100){
+        alert('El comentario es muy largo');
+    }else{
+        alert('Gracias');
+    }
+}
+    </script>
+</body>
+</html>

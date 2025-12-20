@@ -1,0 +1,21 @@
+Que es Node JS
+
+Es un entorno de tiempo de ejecución de JS que se utiliza para ejecutar nuestro código de JS del lado del servidor, Se utiliza para el entorno back.
+
+Es una herramienta que se basa en un modelo de programación que se basa en eventos y utiliza un bucle de eventos para manejar tareas asíncronas, lo que lo hace adecuado para ejecutar nuestras tareas en tiempo real
+
+Se debe descarga node js 
+
+https://nodejs.org/es/download
+
+una vez instalado en CMD escribimos para validar que este instalado correctamente y se mostrara la versión que se instalo
+
+node -V
+
+y
+
+npm -v
+
+===================
+
+nps es el administrador de paquetes predeterminado de node JS, es una herramienta que se utiliza para gestionar, instalar y compartir bibliotecas y modulos de JS, con esto podremos instalar fácilmente modulos y paquetes en JS, también vamos a poder rastrear y gestionar dependencias de nuestros proyectos lo que nos va permitir instalar automáticamente bibliotecas para nuestras aplicaciones
